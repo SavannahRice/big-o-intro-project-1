@@ -61,21 +61,47 @@ function bSearch(nums, target, lo = 0, hi = nums.length - 1) {
 }
 
 function okayTwoSum2(arr, targetSum) {
-
+  //use bsearch here
 }
 
-
+// O(n)
 function twoSum(arr, targetSum) {
-  // Code goes here ...
+  let obj = {};
+  for (let i = 0; i < arr.length; i++){
+    let remainder = targetSum - arr[i];
+    if (remainder in obj) return true;
+    if (obj[arr[i]] === undefined){
+      (obj[arr[i]] = 1)}
+    else {
+      obj[arr[i]] += 1;
+    }
+    
+
+  } return false;
+  
+
 }
 
 
 function twoSumIndices(arr, targetSum) {
-  // Code goes here ...
+  let obj = {};
+  for (let i = 0; i < arr.length; i++){
+    let remainder = targetSum - arr[i];
+    if (remainder in obj) return [i, arr.indexOf(remainder)];
+    if (obj[arr[i]] === undefined){
+      (obj[arr[i]] = 1)}
+    else {
+      obj[arr[i]] += 1;
+    }
+    
+
+  } return -1;
+  
 }
 
 const arr = [0, 5, 1, 7]; // => [0,1,5,7]
 // console.log(badTwoSum(arr, 6)); // => should be true
 // console.log(badTwoSum(arr, 10));
-console.log(okayTwoSum1(arr, 6));
-console.log(okayTwoSum1(arr, 10));
+// console.log(okayTwoSum1(arr, 6));
+// console.log(okayTwoSum1(arr, 10));
+console.log(twoSumIndices(arr, 2))
